@@ -1,5 +1,5 @@
 # nodejs-cart
-nodejs-cart is an project open-source, user-oriented, **ecommerce** system based on Django framework. If you want to help both as an **investor**, **partner** or as a **developer** send me email: mfalcon@ynext.cl :+1:.It is in development, it is not finished ,while we will upload videos so you can see our progress.
+nodejs-cart is an project open-source, user-oriented, **ecommerce** system based on NodeJS framework. If you want to help both as an **investor**, **partner** or as a **developer** send me email: mfalcon@ynext.cl :+1:.It is in development, it is not finished ,while we will upload videos so you can see our progress.
 
 # Deploy
 ```
