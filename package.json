@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-cart",
+  "version": "1.0.0",
+  "description": "nodejs-cart is an project open-source, user-oriented, **ecommerce** system based on Django framework. If you want to help both as an **investor**, **partner** or as a **developer** send me email: mfalcon@ynext.cl :+1:.It is in development, it is not finished ,while we will upload videos so you can see our progress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falconsoft3d/nodejs-cart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falconsoft3d/nodejs-cart/issues"
+  },
+  "homepage": "https://github.com/falconsoft3d/nodejs-cart#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "nodemon": "^2.0.7",
+    "sqlite": "^4.0.19",
+    "stripe": "^8.137.0"
+  }
+}
