@@ -10,7 +10,6 @@ npm install
 
 # Who I am
 My Name is Marlon Falcón Hernández. I am a Civil Engineer and Master in Architecture.
-![Alt text](https://github.com/falconsoft3d/pyerp/blob/master/marketing/marlon-falcon-youtube.png?raw=true "Marlon")
 
 
 # My contact data
