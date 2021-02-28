@@ -1,4 +1,7 @@
 const { Router } = require('express');
+const express = require('express');
+
+
 const router = Router();
 require('dotenv').config();
 const port = process.env.PORT;
@@ -11,10 +14,22 @@ router.get('/', (req, res) =>{
 });
 
 router.get('/login', (req, res) =>{
-    res.render('login', {
+        res.render('login', {
             title: process.env.APPNAME}
             );
 });
+
+/*
+router.post('/login', (req, res) =>{
+    req.authenticate('local', 
+        { successRedirect: '/admin',
+        failureRedirect: '/login' })
+});*/
+
+router.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/login'); //Can fire before session is destroyed?
+  });
 
 router.get('/signup', (req, res) =>{
     res.render('signup', {
@@ -28,10 +43,15 @@ router.get('/dashboard', (req, res) =>{
             );
 });
 
-router.get('/admin', (req, res) =>{
-    res.render('admin', {
-            title: process.env.APPNAME}
-            );
+
+router.get("/admin", (req, res, next) =>{
+    if( req.isAuthenticated() ){
+        return next();
+        console.log("if( req.isAuthenticated() ){:::: SI");
+    }
+    res.redirect("/login");
+}  ,(req,res) =>{
+    res.render('admin');
 });
 
 module.exports = router;
