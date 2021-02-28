@@ -1,3 +1,9 @@
 footer a {
-    color: #869ab8!important;
+    color: #869ab8 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4D07E6 !important;
+    border-color: #4D078E !important;
 }

@@ -16,19 +16,16 @@ const fs = require('fs');
 console.clear();
 
 const pathDataBase = path.join(__dirname, 'database/db.sqlite')
-
+var sqlite3 = require('sqlite3').verbose();
 
 if(fs.existsSync( pathDataBase ) ){
         console.log("M1: The db.sqlite EXISTS: ".green);
-        var sqlite3 = require('sqlite3').verbose();
         var db = new sqlite3.Database( pathDataBase );
     }else{
         // We create demo data if the database does not exist
         console.log("M1: The db.sqlite NOT EXISTS ".red);
         console.log("M1.1: Created Database: db.sqlite".blue);
         console.log(pathDataBase.blue);
-        
-        var sqlite3 = require('sqlite3').verbose();
         var db = new sqlite3.Database( pathDataBase );
         
         db.serialize(function() {
@@ -38,7 +35,7 @@ if(fs.existsSync( pathDataBase ) ){
             db.run( fs.readFileSync( path.join(__dirname, 'database/comments.sql')).toString());
             db.run( fs.readFileSync( path.join(__dirname, 'database/categories.sql')).toString());
             // Table Insert
-            db.run("INSERT INTO users( name, password, rol, active) VALUES('admin', '"+md5('admin')+"', 'admin', 1);");
+            db.run("INSERT INTO users( name, password, rol, active) VALUES('admin', '"+md5('x1234567890')+"', 'admin', 1);");
             db.run("INSERT INTO users( name, password, rol, active) VALUES('demo', '"+md5('demo')+"', 'user', 1);");
         })
 
@@ -68,7 +65,12 @@ passport.deserializeUser(function(id,done){
 
 
 passport.use(new PassportLocal( function(username, password, done) {
-    let sql = "SELECT username FROM users  WHERE user='" + username + "'";
+    let sql = "SELECT * FROM users  WHERE name='" + username + "' AND password='" + md5(password) + "'";
+    const sqlRes = db.get(sql);
+
+    console.log(sql);
+    console.log(sqlRes);
+
     if(username === 'admin' && password === 'x1234567890' ) return done(null, {  id:1, name: 'Marlon' });
     done(null,false);
 }));
