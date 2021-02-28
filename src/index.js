@@ -29,6 +29,8 @@ if(fs.existsSync( pathDataBase ) ){
             // Table Create
             db.run( fs.readFileSync( path.join(__dirname, 'database/users.sql')).toString());
             db.run( fs.readFileSync( path.join(__dirname, 'database/products.sql')).toString());
+            db.run( fs.readFileSync( path.join(__dirname, 'database/comments.sql')).toString());
+            db.run( fs.readFileSync( path.join(__dirname, 'database/categories.sql')).toString());
             // Table Insert
             db.run("INSERT INTO users( name, password, rol, active) VALUES('admin', '"+md5('admin')+"', 'admin', 1);");
             db.run("INSERT INTO users( name, password, rol, active) VALUES('demo', '"+md5('demo')+"', 'user', 1);");
@@ -37,7 +39,6 @@ if(fs.existsSync( pathDataBase ) ){
         db.each("SELECT * FROM users", function(err, row) {
             console.log(row.id + ": " + row.name);
         });
-        
     }
 
 const app = express();
