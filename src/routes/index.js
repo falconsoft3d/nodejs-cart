@@ -10,4 +10,10 @@ router.get('/', (req, res) =>{
             );
 });
 
+router.get('/login', (req, res) =>{
+    res.render('login', {
+            title: process.env.APPNAME}
+            );
+});
+
 module.exports = router;
