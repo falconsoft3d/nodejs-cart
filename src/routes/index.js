@@ -49,6 +49,12 @@ router.get('/store', (req, res) =>{
             );
 });
 
+router.get('/cart', (req, res) =>{
+    res.render('cart', {
+            title: process.env.APPNAME}
+            );
+});
+
 router.get('/product', (req, res) =>{
     res.render('product', {
             title: process.env.APPNAME}
