@@ -16,4 +16,22 @@ router.get('/login', (req, res) =>{
             );
 });
 
+router.get('/signup', (req, res) =>{
+    res.render('signup', {
+            title: process.env.APPNAME}
+            );
+});
+
+router.get('/dashboard', (req, res) =>{
+    res.render('dashboard', {
+            title: process.env.APPNAME}
+            );
+});
+
+router.get('/admin', (req, res) =>{
+    res.render('admin', {
+            title: process.env.APPNAME}
+            );
+});
+
 module.exports = router;
