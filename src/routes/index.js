@@ -43,6 +43,19 @@ router.get('/dashboard', (req, res) =>{
             );
 });
 
+router.get('/store', (req, res) =>{
+    res.render('store', {
+            title: process.env.APPNAME}
+            );
+});
+
+router.get('/contact', (req, res) =>{
+    res.render('contact', {
+            title: process.env.APPNAME}
+            );
+});
+
+
 
 router.get("/admin", (req, res, next) =>{
     if( req.isAuthenticated() ){
@@ -53,5 +66,15 @@ router.get("/admin", (req, res, next) =>{
 }  ,(req,res) =>{
     res.render('admin');
 });
+
+
+/*
+router.get('/*', (req, res) =>{
+    res.render('404', {
+            title: process.env.APPNAME}
+            );
+});
+*/
+
 
 module.exports = router;

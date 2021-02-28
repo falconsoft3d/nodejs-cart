@@ -6,5 +6,6 @@ CREATE TABLE products (
   , text TEXT
   , price REAL
   , active INTEGER
+  , download INTEGER
   , category char(128)
 );
