@@ -9,6 +9,10 @@ npm install
 nodemon src/index.js
 ```
 
+# Screenshot
+![Alt text](https://github.com/falconsoft3d/nodejs-cart/blob/main/marketing/web-01.png "nodejs-cart")
+![Alt text](https://github.com/falconsoft3d/nodejs-cart/blob/main/marketing/web-02.png "nodejs-cart")
+
 # Who I am
 My Name is Marlon Falcón Hernández. I am a Civil Engineer and Master in Architecture.
 
