@@ -3,6 +3,7 @@ const expbhs = require('express-handlebars');
 const path = require('path');
 require('dotenv').config();
 const port = process.env.PORT;
+var i18n = require('i18n');
 
 const app = express();
 app.set('views',  path.join(__dirname, 'views'));
