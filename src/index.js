@@ -4,6 +4,8 @@ const expbhs = require('express-handlebars');
 const path = require('path');
 require('dotenv').config();
 const port = process.env.PORT;
+const md5 = require('md5');
+
 // var i18n = require('i18n');
 const fs = require('fs');
 
@@ -28,8 +30,8 @@ if(fs.existsSync( pathDataBase ) ){
             db.run( fs.readFileSync( path.join(__dirname, 'database/users.sql')).toString());
             db.run( fs.readFileSync( path.join(__dirname, 'database/products.sql')).toString());
             // Table Insert
-            db.run("INSERT INTO users( name, password, rol, active) VALUES('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 1);");
-            db.run("INSERT INTO users( name, password, rol, active) VALUES('demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'user', 1);");
+            db.run("INSERT INTO users( name, password, rol, active) VALUES('admin', '"+md5('admin')+"', 'admin', 1);");
+            db.run("INSERT INTO users( name, password, rol, active) VALUES('demo', '"+md5('demo')+"', 'user', 1);");
         })
 
         db.each("SELECT * FROM users", function(err, row) {
