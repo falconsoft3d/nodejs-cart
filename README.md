@@ -9,8 +9,10 @@ npm install
 nodemon src/index.js
 ```
 
-# Screenshot
+# Screenshot Home Page
 ![Alt text](https://github.com/falconsoft3d/nodejs-cart/blob/main/marketing/web-01.png "nodejs-cart")
+
+# Screenshot Store Page
 ![Alt text](https://github.com/falconsoft3d/nodejs-cart/blob/main/marketing/web-02.png "nodejs-cart")
 
 # Who I am
