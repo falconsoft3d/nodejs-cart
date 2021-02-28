@@ -1,10 +1,61 @@
-<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
-  <p class="h5 my-0 me-md-auto fw-normal">Company name</p>
-  <nav class="my-2 my-md-0 me-md-3">
-    <a class="p-2 text-dark" href="#">Features</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
-    <a class="p-2 text-dark" href="#">Pricing</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="#">Sign up</a>
-</header>
+
+  <header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="/">{{ title }}</a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/store">Store</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <!-- Search form -->
+      <form class="d-flex input-group w-auto">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Type query"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          data-mdb-ripple-color="dark"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+  </header>
