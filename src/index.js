@@ -34,6 +34,7 @@ if(fs.existsSync( pathDataBase ) ){
             db.run( fs.readFileSync( path.join(__dirname, 'database/products.sql')).toString());
             db.run( fs.readFileSync( path.join(__dirname, 'database/comments.sql')).toString());
             db.run( fs.readFileSync( path.join(__dirname, 'database/categories.sql')).toString());
+            db.run( fs.readFileSync( path.join(__dirname, 'database/usersapp.sql')).toString());
             // Table Insert
             db.run("INSERT INTO users( name, password, rol, active) VALUES('admin', '"+md5('x1234567890')+"', 'admin', 1);");
             db.run("INSERT INTO users( name, password, rol, active) VALUES('demo', '"+md5('demo')+"', 'user', 1);");

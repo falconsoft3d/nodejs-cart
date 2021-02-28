@@ -1,0 +1,5 @@
+CREATE TABLE usersapp (
+    id INTEGER PRIMARY KEY AUTOINCREMENT
+  , iduser INTEGER
+  , idapp INTEGER
+);
