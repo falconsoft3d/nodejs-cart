@@ -25,7 +25,7 @@ controller.store = (req, res) => {
                     res.json({ error: err })
                 }
                 res.render('store', {
-                    data: products
+                    products: products
                 });
             })
         });

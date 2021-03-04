@@ -20,24 +20,25 @@
       <div style="margin-top: 20px;"></div>
 
         <div class="row">
-
+          {{#each products}}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="/img/module.png" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">sale_mass</a> / <a href="#">Sale</a>
+                  <a href="#"> {{ this.name }} </a> / <a href="#">{{ this.category }}</a>
                 </h4>
-                <h5>24.99 €</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>{{ this.price }}</h5>
+                <p class="card-text">{{ this.text }}</p>
               </div>
               <div class="card-footer">
-                <a href="/product" class="btn btn-primary">View Moduls</a>
+                <a href="/product/{{ this.id }}" class="btn btn-primary">View Moduls</a>
               </div>
               
             </div>
           </div>
-          
+          {{/each}}
+
         </div>
         <!-- /.row -->
 
