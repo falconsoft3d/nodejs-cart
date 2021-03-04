@@ -18,11 +18,18 @@ controller.dashboard = (req, res) =>{
 }
 
 // Store
-controller.store = (req, res) =>{
-    res.render('store', {
-        title: process.env.APPNAME}
-        );
-}
+controller.store = (req, res) => {
+    req.getConnection((err, conn) => {    
+        conn.query('SELECT * FROM products', (err, products) =>{
+                if (err) {
+                    res.json({ error: err })
+                }
+                res.render('store', {
+                    data: products
+                });
+            })
+        });
+};
 
 // Cart
 controller.cart = (req, res) =>{

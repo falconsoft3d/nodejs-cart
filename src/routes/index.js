@@ -6,6 +6,7 @@ require('dotenv').config();
 
 // main
 router.get('/',  mainController.index );
+
 // Login
 router.get('/login', loginController.login);
 router.get('/logout', loginController.logout);
