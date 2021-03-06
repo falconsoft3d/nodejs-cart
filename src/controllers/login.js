@@ -1,27 +1,37 @@
-const controller = require('./main');
-
 require('dotenv').config();
-const controler = { };
+const controller = { };
+var product_md = require("../modles/product");
+var category_md = require("../modles/category");
 
 // Login
-controler.login = (req, res) =>{
-    res.render('login', {
-        title: process.env.APPNAME}
-        );
+controller.login = (req, res) =>{
+    var categories = category_md.getAllCategories();
+    const allPromises = Promise.all([categories]).then(
+        function( success )
+        { 
+            var result = {
+                categories: success[0],
+                title: process.env.APPNAME,
+                error: false
+            };
+            res.render("login", { data: result });
+        }).catch(function(err){
+            var result = { error: "Could not get products data" };
+            res.render("login", {data: result});
+        });
 }
 
 // Logout
-controler.logout = (req, res) =>{
-    res.render('logout', {
-        title: process.env.APPNAME}
-        );
+controller.logout = (req, res) =>{
+    req.logout();
+    res.redirect('/');
 }
 
 // Signup
-controler.signup = (req, res) =>{
+controller.signup = (req, res) =>{
     res.render('signup', {
         title: process.env.APPNAME}
         );
 }
 
-module.exports = controler
+module.exports = controller
