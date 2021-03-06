@@ -101,6 +101,7 @@ controller.cart = (req, res) =>{
 
 // Product
 controller.product = (req, res) =>{
+    const { id } = req.params;
     var categories = category_md.getAllCategories();
     const allPromises = Promise.all([categories]).then(
         function( success )

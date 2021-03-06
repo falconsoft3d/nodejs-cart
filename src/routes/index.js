@@ -16,7 +16,7 @@ router.get('/signup', loginController.signup);
 router.get('/dashboard', mainController.dashboard);
 router.get('/store', mainController.store);
 router.get('/cart', mainController.cart);
-router.get('/product', mainController.product);
+router.get('/product:id', mainController.product);
 router.get('/contact', mainController.contact);
 
 
