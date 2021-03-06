@@ -68,5 +68,6 @@ passport.authenticate('local', { successRedirect: '/admin',
 app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(process.env.PORT || port, ()=>{
+    console.clear();
     console.log(`M2: Server on port ${port}`.green);
 })

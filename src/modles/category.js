@@ -16,5 +16,5 @@ function getAllCategories(){
 }
 
 module.exports = {
-    getAllCategories: getAllCategories,
+    getAllCategories
 }

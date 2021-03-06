@@ -1,6 +1,6 @@
 <div class="carr-index">
   <div class="container">
-      <h1 class="display-4">{{ title }} </h1>
+      <h1 class="display-4">{{ data.title }} </h1>
       <p>We have differents <strong>Odoo ERP</strong> modules to improve various areas of the company, all day new Modules :).</p>
        <p class="lead">
       <a href="/store" class="btn btn-lg btn-secondary fw-bold border-white bg-white" style="color: #4D07E6;"> Explore the Store </a>
@@ -13,59 +13,24 @@
           <p class="lead">List of most downloaded modules</p>
           <div class="container">
           <div class="row">
-
+          {{#each data.products }}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="/img/module.png" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">sale_mass</a> / <a href="#">Sale</a>
+                  <a href="#">{{ this.name }}</a>
                 </h4>
-                <h5>24.99 €</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5 class="text-danger">{{ this.price }} €</h5>
+                <p class="card-text">{{ this.text }}</p>
               </div>
               <div class="card-footer">
-                <a href="/product" class="btn btn-primary">View Moduls</a>
+                <a href="/product/{{ this.id }}" class="btn btn-primary">View Moduls</a>
               </div>
               
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="/img/module.png" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">stock_mass</a> / <a href="#">Stock</a>
-                </h4>
-                <h5>24.99 €</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <a href="/product" class="btn btn-primary">View Moduls</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="/img/module.png" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">account_mass</a> / <a href="#">Account</a>
-                </h4>
-                <h5>200.99 €</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <a href="/product" class="btn btn-primary">View Moduls</a>
-              </div>
-            </div>
-          </div>
-
-          
-
-      
+         {{/each}}
 
         </div>
         <!-- /.row -->
