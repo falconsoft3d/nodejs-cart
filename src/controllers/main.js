@@ -1,5 +1,7 @@
 require('dotenv').config();
 const controller = { };
+var product_md = require("../modles/product");
+var category_md = require("../modles/category");
 
 // Index Page
 controller.index = (req, res) =>{
@@ -17,18 +19,28 @@ controller.dashboard = (req, res) =>{
         );
 }
 
-// Store
-controller.store = (req, res) => {
-    req.getConnection((err, conn) => {    
-        conn.query('SELECT * FROM products', (err, products) =>{
-                if (err) {
-                    res.json({ error: err })
-                }
-                res.render('store', {
-                    products: products
-                });
-            })
-        });
+
+controller.store =  function(req, res){
+    var data = product_md.getAllProducts();
+    var categories = category_md.getAllCategories();
+    
+    data.then(function(products){
+        var result = {
+            products: products,
+            categories: categories, 
+            error: false
+        };
+
+        console.log( result );
+
+        res.render("store", {data: result});
+    }).catch(function(err){
+        var result = {
+            error: "Could not get posts data"
+        };
+
+        res.render("store", {data: result});
+    });
 };
 
 // Cart

@@ -52,9 +52,9 @@
                 <div class="col-6 col-md">
                   <h5>Category</h5>
                   <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary" href="#">Sales</a></li>
-                    <li><a class="link-secondary" href="#">Purchase</li>
-                    <li><a class="link-secondary" href="#">Stock</a></li>
+                    {{#each categories}}
+                      <li><a href="#" class="link-secondary">{{ this.name }}</a></li>
+                    {{/each}}
                   </ul>
                 </div>
 

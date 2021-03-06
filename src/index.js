@@ -12,8 +12,6 @@ const session = require('express-session');
 const PassportLocal = require('passport-local').Strategy;
 var crypto = require('crypto');
 const morgan = require('morgan');
-const mysql = require('mysql');
-const myConnection = require('express-myconnection');
 
 // var i18n = require('i18n');
 const fs = require('fs');
@@ -57,16 +55,6 @@ app.set('view engine', '.hbs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(morgan('dev'));
-
-// Settings
-app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    port: 3306,
-    dialect : "mysql",
-    database: process.env.DB_NAME
-}, 'single' ));
 
 // Routs
 app.use(require('./routes/index'));

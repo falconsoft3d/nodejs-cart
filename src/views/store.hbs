@@ -7,9 +7,9 @@
 
         <h1 class="my-4">Categorys</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item">Sale</a>
-          <a href="#" class="list-group-item">Account</a>
-          <a href="#" class="list-group-item">Stock</a>
+          {{#each data.categories }}
+            <a href="#" class="list-group-item">{{ this.name }}</a>
+          {{/each}}
         </div>
 
       </div>
@@ -20,13 +20,13 @@
       <div style="margin-top: 20px;"></div>
 
         <div class="row">
-          {{#each products}}
+          {{#each data.products }}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="/img/module.png" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"> {{ this.name }} </a> / <a href="#">{{ this.category }}</a>
+                  <a href="#"> {{ this.name }} </a> / <a href="#">1212</a>
                 </h4>
                 <h5>{{ this.price }}</h5>
                 <p class="card-text">{{ this.text }}</p>

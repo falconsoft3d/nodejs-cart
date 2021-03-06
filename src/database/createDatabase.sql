@@ -36,7 +36,7 @@ CREATE TABLE products (
 
 CREATE TABLE categories (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    video VARCHAR(50)
+    name VARCHAR(50)
 );
 
 CREATE TABLE comments (
